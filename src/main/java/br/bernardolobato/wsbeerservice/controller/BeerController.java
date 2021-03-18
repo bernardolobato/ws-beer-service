@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/vi/beer")
+@RequestMapping("/api/v1/beer")
 public class BeerController {
 
     @GetMapping("/{beerId}")
@@ -22,7 +22,7 @@ public class BeerController {
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity<BeerDto> update(@RequestBody BeerDto beerDto,  UUID beerId)  {
+    public ResponseEntity<BeerDto> update(@RequestBody BeerDto beerDto,  @PathVariable UUID beerId)  {
         return new ResponseEntity(HttpStatus.OK);
     }
 
